@@ -1,5 +1,6 @@
 package ru.netology.authorizationserviceboot.service;
 
+import org.springframework.stereotype.Service;
 import ru.netology.authorizationserviceboot.enums.Authorities;
 import ru.netology.authorizationserviceboot.exception.InvalidCredentials;
 import ru.netology.authorizationserviceboot.exception.UnauthorizedUser;
@@ -7,6 +8,7 @@ import ru.netology.authorizationserviceboot.repository.UserRepository;
 
 import java.util.List;
 
+@Service
 public class AuthorizationService {
     UserRepository userRepository;
 
