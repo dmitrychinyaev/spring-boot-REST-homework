@@ -1,0 +1,25 @@
+
+worker_processes  4;
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       mime.types;
+
+    server {
+        listen       80;
+        server_name  localhost;
+
+        location / {
+            proxy_pass http://localhost:8080/;
+        }
+
+        location /signin {
+            alias  C:/niginx/public_html;
+            index  index.html;
+        }
+    }
+}
